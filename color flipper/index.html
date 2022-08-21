@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UFT-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Color Flipper</title>
+</head>
+<body>
+  
+        <div class="container">
+            <h1>Color Flipper</h1>
+            <p>Color code: <span id="color-text"></span></p>
+            <button class="btn" >Click me</button>
+            
+        </div>
+       
+
+</body>
+
+</html>
+<style>
+
+</style>
+<script>
+    //gets the button
+    const btn = document.querySelector('.btn');
+    const color_text = document.querySelector("#color-text");
+    //getting the colors codes
+    const hexaCode = [1,2,3,4,5,6,"A","B","C","D","E","F"];
+
+    //GETTING DIFFERENT HEXACODE COLORS
+    function gettingRandomNum (){
+        return Math.floor(Math.random() * hexaCode.length)
+    }
+    btn.addEventListener('click', () => {
+        //STARTING WITH THE # ELEMENT
+        let hexacOLOR = '#';
+        //getting random numbers and creating the color code(hexta)
+        for(let i =0; i<6; i++) {
+            hexacOLOR += hexaCode[gettingRandomNum()]
+        }
+        //giving the background the color we get from the hexta
+        document.body.style.backgroundColor = hexacOLOR;
+        //giving the text  the color we get from the hexta
+        color_text.textContent = hexacOLOR;
+
+
+    })
+
+</script>
